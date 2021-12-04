@@ -34,15 +34,46 @@ class BTS {
       }
     }
   }
-  searchTree(this.root)
+  searchTree(this.root.value)
+ }
+
+
+ min() {
+  let currentNode = this.root
+
+  while (currentNode.left) {
+    currentNode = currentNode.left
+  }
+  return currentNode.value
+ }
+
+ max() {
+  let currentNode = this.root
+
+  while (currentNode.right){
+    currentNode = currentNode.right
+  }
+  return currentNode.value
+ }
+
+ contains(value) {
+   let currentNode = this.root
+
+   while(currentNode){
+    if (value === currentNode.value){
+      return true
+    }
+    if (vallue < currentNode.value){
+      currentNode = currentNode.left
+    }else{
+      currentNode = currentNode.right
+    }
+   }
+   return false
  }
 
 
 
 
-
 }
-
-
-
 
